@@ -7,11 +7,11 @@ import App from './App';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>,
+
+  <Router>
+    <App />
+  </Router>
+  ,
   document.getElementById('root')
 );
 

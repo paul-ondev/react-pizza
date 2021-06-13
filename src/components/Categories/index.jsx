@@ -4,7 +4,7 @@ import './../Categories/Categories.scss';
 
 const Categories = ({ items }) => {
   const [activeItem, setActiveItem] = useState(null);
-  const selectItem = (index) => {
+  const onSelectItem = (index) => {
     setActiveItem(index);
   };
   return (
@@ -16,7 +16,7 @@ const Categories = ({ items }) => {
         {items?.map((item, index) => {
           return (
             <li
-              onClick={() => selectItem(index)}
+              onClick={() => onSelectItem(index)}
               className={activeItem === index ? 'active' : null}
               key={index}>
               {item}
