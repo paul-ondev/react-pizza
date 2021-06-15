@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import PropTypes, { number } from 'prop-types';
 
 import './PizzaBlock.scss';
 
@@ -74,6 +75,20 @@ const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {
       </div>
     </div>
   );
+};
+
+PizzaBlock.propTypes = {
+  name: PropTypes.string,
+  price: PropTypes.number,
+  types: PropTypes.arrayOf(number).isRequired,
+  sizes: PropTypes.arrayOf(number).isRequired,
+};
+
+PizzaBlock.defaultProps = {
+  name: '---',
+  price: 0,
+  types: [],
+  sizes: [],
 };
 
 export default PizzaBlock;

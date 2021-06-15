@@ -10,7 +10,7 @@ const Categories = ({ items }) => {
   return (
     <div className="categories">
       <ul className="categories__list">
-        <li className={activeItem === null ? 'active' : null} onClick={() => setActiveItem(null)}>
+        <li className={activeItem === null ? 'active' : null} onClick={() => onSelectItem(null)}>
           Все
         </li>
         {items?.map((item, index) => {
@@ -18,7 +18,7 @@ const Categories = ({ items }) => {
             <li
               onClick={() => onSelectItem(index)}
               className={activeItem === index ? 'active' : null}
-              key={index}>
+              key={`${item}_${index}`}>
               {item}
             </li>
           );

@@ -5,13 +5,14 @@ import './SortPopup.scss';
 const Sort = ({ items }) => {
   const [activeItem, setActiveItem] = useState(0);
   const [visiblePopup, setVisiblePopup] = useState(false);
+  const activeLabel = items[activeItem].name;
   let sortRef = useRef();
 
   useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
   }, []);
 
-  const selectItem = (index) => {
+  const onSelectItem = (index) => {
     setActiveItem(index);
     setVisiblePopup(false);
   };
@@ -41,7 +42,7 @@ const Sort = ({ items }) => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={togglePopup}>{items[activeItem]}</span>
+        <span onClick={togglePopup}>{activeLabel}</span>
       </div>
       {visiblePopup && (
         <div className="sort__popup">
@@ -49,10 +50,10 @@ const Sort = ({ items }) => {
             {items?.map((item, index) => {
               return (
                 <li
-                  onClick={() => selectItem(index)}
+                  onClick={() => onSelectItem(index)}
                   className={activeItem === index ? 'active' : null}
-                  key={index}>
-                  {item}
+                  key={`${item.type}_${index}`}>
+                  {item.name}
                 </li>
               );
             })}
