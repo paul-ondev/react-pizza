@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import './SortPopup.scss';
 
-const Sort = ({ items }) => {
+const SortPopup = React.memo(function SortPopup({ items }) {
   const [activeItem, setActiveItem] = useState(0);
   const [visiblePopup, setVisiblePopup] = useState(false);
   const activeLabel = items[activeItem].name;
@@ -62,6 +62,6 @@ const Sort = ({ items }) => {
       )}
     </div>
   );
-};
-
-export default Sort;
+}
+)
+export default SortPopup;
