@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Categories, SortPopup, PizzaBlock } from '../components/index';
+import { Categories, SortPopup, PizzaBlock, PizzaLoadingBlock } from '../components/index';
 import { setCategory } from '../redux/actions/filters'
+import { fetchPizzas } from "../redux/actions/pizzas";
 
 const categoryNames = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 const sortItems = [
@@ -14,15 +15,25 @@ const sortItems = [
 const Home = () => {
   const dispatch = useDispatch();
 
-  const { items } = useSelector(({ pizzas }) => {
+  const {items, isLoaded}  = useSelector(({ pizzas }) => {
     return {
       items: pizzas.items,
+      isLoaded: pizzas.isLoaded,
     };
   });
+  
+  useEffect(() => {
+    if (!items.length) {
+      dispatch(fetchPizzas())
+    }
+    
+    ;
+  }, []);
 
   const onSelectCategory = (index) => {
     dispatch(setCategory(index))
   }
+  console.log( isLoaded);
   return (
     <main className="content">
       <div className="content__top">
@@ -37,9 +48,9 @@ const Home = () => {
           <h2>Все пиццы</h2>
         </div>
         <div className="products__block">
-          {items?.map((item) => (
+          {isLoaded ? items.map((item) => (
             <PizzaBlock key={item.id} {...item} />
-          ))}
+          )) : Array(12).fill(<PizzaLoadingBlock />)}
         </div>
       </div>
     </main>
