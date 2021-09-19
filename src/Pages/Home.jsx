@@ -7,27 +7,27 @@ import { fetchPizzas } from "../redux/actions/pizzas";
 
 const categoryNames = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 const sortItems = [
-  { name: 'популярности', type: 'popular' },
+  { name: 'популярности', type: 'rating' },
   { name: 'по цене', type: 'price' },
-  { name: 'по алфавиту', type: 'alphabet' },
+  { name: 'по алфавиту', type: 'name' },
 ];
 
 const Home = () => {
   const dispatch = useDispatch();
 
-  const {items, isLoaded}  = useSelector(({ pizzas }) => {
+  const { items, isLoaded } = useSelector(({ pizzas }) => {
     return {
       items: pizzas.items,
       isLoaded: pizzas.isLoaded,
     };
   });
-  
-  const {category, sortBy} = useSelector(state => state.filter);
+
+  const { category, sortBy } = useSelector(state => state.filter);
   console.log(sortBy);
   console.log(category);
 
   useEffect(() => {
-    dispatch(fetchPizzas());
+    dispatch(fetchPizzas(category, sortBy));
   }, [category, sortBy]);
 
   const onSelectCategory = (index) => {
