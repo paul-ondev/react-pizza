@@ -1,9 +1,11 @@
 import React from 'react';
 
+import {CartBlockEmpty} from '../components/index'
+
 const Cart = () => {
   return (
-    <main className="content">
-      <h1>Cart lies here</h1>
+    <main className="content--cart">
+      <CartBlockEmpty />
     </main>
   );
 };
