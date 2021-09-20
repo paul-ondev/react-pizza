@@ -29,7 +29,9 @@ a {
     margin-bottom: 32px;
   }
   &--cart {
-    min-width: 802px;
+    max-width: 820px;
+    margin: 0 auto;
+    margin-top: 94px;
   }
 }
 

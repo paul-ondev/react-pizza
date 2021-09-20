@@ -1,11 +1,12 @@
 import React from 'react';
 
-import {CartBlockEmpty} from '../components/index'
+import {CartBlockEmpty, CartBlock} from '../components/index'
 
 const Cart = () => {
   return (
     <main className="content--cart">
-      <CartBlockEmpty />
+      {/*<CartBlockEmpty />*/}
+      <CartBlock />
     </main>
   );
 };

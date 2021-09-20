@@ -1,0 +1,68 @@
+@import "/src/scss/variables";
+
+.empty-cart-block {
+  &__title {
+    text-align: center;
+    font-size: 32px;
+  }
+  &__text {
+    text-align: center;
+    font-size: 18px;
+    color: $carttext;
+  }
+  &__btn {
+    margin: 0 36%;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 16px 32px;
+    margin-right: 9px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+    color: #fff;
+    &:hover {
+      background-color: lighten(#282828, 5%);
+      color: #fff;
+    }
+
+    &:active {
+      background-color: lighten(#282828, 15%);
+      color: #fff;
+    }
+  }
+}
+
+.cart-block {
+  max-width: 820px;
+}
+
+.cart-block-top {
+  display: flex;
+  justify-content: space-between;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    margin-left: 18px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .cart-icon {
+    &__main {
+      position: relative;
+      top: -4px;
+    }
+    &__wheel-1 {
+      position: relative;
+      left: 5px;
+    }
+    &__wheel-2 {
+      position: relative;
+      left: 15px;
+    }
+  }
+}
