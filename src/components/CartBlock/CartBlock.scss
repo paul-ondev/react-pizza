@@ -41,6 +41,7 @@
 .cart-block-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   &__title {
     display: flex;
     justify-content: space-between;
@@ -54,15 +55,57 @@
   .cart-icon {
     &__main {
       position: relative;
-      top: -4px;
+      top: 1px;
+    }
+    &__wheels {
+      position: relative;
+      top: -9px;
     }
     &__wheel-1 {
       position: relative;
-      left: 5px;
+      left: 6px;
     }
     &__wheel-2 {
       position: relative;
-      left: 15px;
+      left: 14px;
     }
+  }
+  &__empty-cart {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__trash-icon {
+    margin-right: 11px;
+  }
+  .trash-icon {
+    &__main {
+      position: relative;
+      left: 1px;
+      top: -1px;
+    }
+    &__horizont {
+      position: relative;
+      left: -15px;
+      top: -14px;
+    }
+    &__vertical-1 {
+      position: relative;
+      left: -27px;
+      top: -5px;
+    }
+    &__vertical-2 {
+      position: relative;
+      left: -24px;
+      top: -5px;
+    }
+  }
+  &__empty-btn {
+    margin-left: -25px;
+    color: #9b9999;
   }
 }
