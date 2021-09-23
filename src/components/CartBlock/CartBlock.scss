@@ -106,6 +106,22 @@
   }
   &__empty-btn {
     margin-left: -25px;
-    color: #9b9999;
+    color: $cartDelete;
+  }
+}
+
+.cart-block-bottom {
+  margin-bottom: 100px;
+  &__total-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
   }
 }

@@ -44,6 +44,18 @@ const CartBlock = () => {
             <main className="cart-block-main">
                 <CartPizza />
             </main>
+            <footer className="cart-block-bottom">
+                <div className="cart-block-bottom__total-info">
+                    <div className="cart-block-bottom__total-amount">Всего пицц: <b>3 шт.</b></div>
+                    <div className="cart-block-bottom__total-price">Сумма заказа: <b>900 ₽</b></div>
+                </div>
+                <div className="cart-block-bottom__buttons">
+                    <div className="button button--transparent">
+                    Вернуться назад
+                    </div>
+                    <div className="button  cart-block-bottom__back-btn">Оплатить сейчас</div>
+                </div>
+            </footer>
         </div>
     )
 }

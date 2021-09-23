@@ -1,0 +1,88 @@
+@import "/src/scss/variables";
+
+.cart-pizza {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__img {
+    width: 80px;
+    height: 80px;
+  }
+  &__price {
+    margin: 0 93px;
+    font-size: 22px;
+    font-style: bold;
+  }
+  &__delete {
+    transform: rotate(45deg);
+    font-size: 18px;
+    padding-top: 0px;
+    padding-bottom: 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: 2px solid $cartDelete;
+    border-radius: 20px;
+    color: $cartDelete;
+    cursor: pointer;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.pizza-info {
+  margin-left: 15px;
+  &__title {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+  &__description {
+    margin: 0;
+    font-size: 18px;
+    color: #8d8d8d;
+  }
+}
+
+.quantity {
+  &__decrement {
+    font-size: 18px;
+
+    padding: 0 7px;
+    border: 2px solid $orange;
+    border-radius: 20px;
+    color: $orange;
+    min-width: 6px;
+  }
+  &__number {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 12px;
+  }
+  &__increment {
+    font-size: 18px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 6px;
+    padding-right: 5px;
+    border: 2px solid $orange;
+    border-radius: 20px;
+    color: $orange;
+    min-width: 6px;
+  }
+}

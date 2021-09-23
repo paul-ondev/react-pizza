@@ -1,4 +1,4 @@
-@import '/src/scss/variables';
+@import "/src/scss/variables";
 
 .button {
   display: inline-block;
@@ -8,7 +8,8 @@
   min-width: 100px;
   text-align: center;
   cursor: pointer;
-  transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
+  transition: background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
   border: 1px solid transparent;
 
   &,
@@ -32,6 +33,19 @@
     transform: translateY(1px);
   }
 
+  &--transparent {
+    background: #fff;
+    border: 1px solid #cacaca;
+    color: #cacaca;
+    &:hover {
+      background-color: darken($color: #fff, $amount: 30%);
+      color: #fff;
+    }
+    &:active {
+      background-color: darken($color: #fff, $amount: 45%);
+      color: #fff;
+    }
+  }
   &--circle {
     display: flex;
     align-items: center;
