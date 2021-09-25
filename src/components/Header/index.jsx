@@ -12,7 +12,7 @@ import logoSvg from './../../assets/img/logo.svg';
 const Header = () => {
   const {totalPrice, totalAmount} = useSelector(({cart}) => ({
     totalPrice: cart.totalPrice,
-    totalAmount: cart.totalPrice,
+    totalAmount: cart.totalAmount,
   }))
 
 

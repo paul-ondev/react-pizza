@@ -3,12 +3,14 @@ import classNames from 'classnames';
 
 import './Button.scss';
 
-const Button = ({ children, cart, outline }) => {
+const Button = ({ onClickBtn, children, cart, outline, add }) => {
   return (
     <button
+      onClick={onClickBtn}
       className={classNames('button', {
         'button--cart': cart,
         'button--outline': outline,
+        'button--add': add,
       })}>
       {children}
     </button>
