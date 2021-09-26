@@ -5,11 +5,10 @@ import PropTypes, { number } from 'prop-types';
 import './PizzaBlock.scss';
 import { Button } from '..';
 
-const PizzaBlock = ({onAddPizza, id, name, imageUrl, price, types, sizes }) => {
+const PizzaBlock = ({addedPizzasToCart, onAddPizza, id, name, imageUrl, price, types, sizes }) => {
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(sizes[0]);
 
-  console.log(activeType)
 
   const availableTypes = ['тонкое', 'традиционное'];
   const availableSizes = [26, 30, 40];
@@ -23,6 +22,11 @@ const PizzaBlock = ({onAddPizza, id, name, imageUrl, price, types, sizes }) => {
   };
 
   const handleAddPizza = () => {
+    console.log('count 1', count)
+
+    findAmountOfPizzasInCart(id, addedPizzasToCart);
+    console.log('count 1,5', count)
+
     const objPizza ={
       id,
       name,
@@ -33,6 +37,27 @@ const PizzaBlock = ({onAddPizza, id, name, imageUrl, price, types, sizes }) => {
     }
     onAddPizza(objPizza)
   }
+
+  console.log("ADD", addedPizzasToCart)
+
+  let count = 0;
+  const findAmountOfPizzasInCart = (id, addedPizzas) => {
+    if (true) {
+      const key =`id-${id}`;
+      console.log("key", key)
+      let arr = Object.keys(addedPizzas).filter(item => item.toString().includes(key) );
+      console.log("arr is", arr)
+      
+      for (const one of arr) {
+        count = count + addedPizzas[one].totalAmountInCart;
+      }
+      
+    }
+    return null;
+    
+  }
+  
+  console.log('count 2', count)
 
   return (
     <div className="pizza-block">
@@ -85,7 +110,7 @@ const PizzaBlock = ({onAddPizza, id, name, imageUrl, price, types, sizes }) => {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
+          <i>{count}</i>
         </Button>
       </div>
     </div>
