@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './CartBlock.scss';
 
@@ -9,8 +10,9 @@ const CartBlockEmpty = () => {
             <p className="empty-cart-block__text">Вероятней всего, вы не заказывали ещё пиццу.<br/>Для того, чтобы заказать пиццу, перейди на главную страницу.
             </p>
             <img src="" alt="" className="empty-cart-block__img" />
-            <button className="empty-cart-block__btn">Вернуться назад</button>
-
+            <Link to="/">
+                <button className="empty-cart-block__btn">Вернуться назад</button>
+            </Link>
         </div>
     )
 }

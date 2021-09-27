@@ -42,6 +42,15 @@ const cart = (state = initialState, action) => {
     };
   }
 
+  if (action.type === "DELETE_ITEMS_CART") {
+    return {
+      ...state,
+      items: {},
+      totalPrice: 0,
+      totalAmount: 0,
+    };
+  }
+
   return state;
 };
 
