@@ -2,7 +2,7 @@ import React from 'react';
 
 import './CartPizza.scss'
 
-function CartPizza({name, image, type, size, totalAmountInCart, totalPriceInCart}) {
+function CartPizza({name, id, image, type, size, price, changeQuantity, totalAmountInCart, totalPriceInCart}) {
     return (
         <div className='cart-pizza'>
             <div className="cart-pizza__left">
@@ -14,12 +14,12 @@ function CartPizza({name, image, type, size, totalAmountInCart, totalPriceInCart
             </div>
             <div className="cart-pizza__right">
                 <div className="quantity">
-                    <span className="button button--outline button--add quantity__decrement">-</span>
+                    <button onClick={()=>(changeQuantity("DECREMENT", id, type, size, price))} disabled={totalAmountInCart == 1} className="button button--outline button--add quantity__decrement">-</button>
                     <span className="quantity__number">{totalAmountInCart}</span>
-                    <span className="button button--outline button--add quantity__increment">+</span>
+                    <button onClick={()=>(changeQuantity("INCREMENT", id, type, size, price))} className="button button--outline button--add quantity__increment">+</button>
                 </div>
                 <span className="cart-pizza__price">{totalPriceInCart} ₽</span>
-                <span className="cart-pizza__delete">+</span>
+                <span onClick={()=>(changeQuantity("DELETE", id, type, size, price))} className="cart-pizza__delete">+</span>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import {CartPizza} from './../index'
-import {deleteItemsInCart} from './../../redux/actions/cart'
+import {emptyItemsInCart, incrementPizza, decrementPizza, deletePizzas} from './../../redux/actions/cart'
 import './CartBlock.scss';
 
 const CartBlock = () => {
@@ -12,8 +12,26 @@ const CartBlock = () => {
 
     let addedPizzas = Object.values(items);
 
-    const deleteCart = () => {
-        dispatch(deleteItemsInCart())
+    const emptyCart = () => {
+        dispatch(emptyItemsInCart())
+    }
+
+    const changeAmountInCart = (changeType, pizzaId, pizzaType, pizzaSize, pizzaPrice ) => {
+        let obj = {
+            id: pizzaId,
+            type: pizzaType,
+            size: pizzaSize,
+            price: pizzaPrice,
+        };
+        if (changeType === "INCREMENT") {
+            dispatch(incrementPizza(obj))
+        }
+        if (changeType === "DECREMENT") {
+            dispatch(decrementPizza(obj))
+        }
+        if (changeType === "DELETE") {
+            dispatch(deletePizzas(obj))
+        }
     }
 
     return (
@@ -35,7 +53,7 @@ const CartBlock = () => {
                     </div>
                     <div className="cart-block-top__text">Корзина</div>
                 </div>
-                <div onClick={()=>{deleteCart()}} className="cart-block-top__empty-cart">
+                <div onClick={()=>{emptyCart()}} className="cart-block-top__empty-cart">
                     <div className="cart-block-top__trash-icon">
                         <svg className='trash-icon__main'width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.66663 4.00001V2.33334C3.66663 1.89131 3.84222 1.46739 4.15478 1.15483C4.46734 0.842266 4.89127 0.666672 5.33329 0.666672H8.66663C9.10865 0.666672 9.53258 0.842266 9.84514 1.15483C10.1577 1.46739 10.3333 1.89131 10.3333 2.33334V4.00001M12.8333 4.00001V15.6667C12.8333 16.1087 12.6577 16.5326 12.3451 16.8452C12.0326 17.1577 11.6087 17.3333 11.1666 17.3333H2.83329C2.39127 17.3333 1.96734 17.1577 1.65478 16.8452C1.34222 16.5326 1.16663 16.1087 1.16663 15.6667V4.00001H12.8333Z" 
@@ -58,10 +76,13 @@ const CartBlock = () => {
                 {addedPizzas.map(pizza => 
                     <CartPizza
                         key={`id-${pizza.id}_size-${pizza.size}_type-${pizza.type}`}
+                        id={pizza.id}
                         name={pizza.name} 
                         image={pizza.imageUrl}  
                         type={pizza.type} 
                         size={pizza.size}
+                        price={pizza.price}
+                        changeQuantity={changeAmountInCart}
                         totalAmountInCart={pizza.totalAmountInCart}
                         totalPriceInCart={pizza.totalPriceInCart}  />)}
                 

@@ -28,6 +28,16 @@
     background-color: darken($orange, 8%);
   }
 
+  &:disabled {
+    border-color: #cacaca;
+    color: #cacaca;
+  }
+  &:disabled:hover {
+    color: #cacaca;
+    background-color: #fff;
+    cursor: default;
+  }
+
   &:active {
     background-color: darken($orange, 12%);
     transform: translateY(1px);
