@@ -14,7 +14,7 @@ function CartPizza({name, id, image, type, size, price, changeQuantity, totalAmo
             </div>
             <div className="cart-pizza__right">
                 <div className="quantity">
-                    <button onClick={()=>(changeQuantity("DECREMENT", id, type, size, price))} disabled={totalAmountInCart == 1} className="button button--outline button--add quantity__decrement">-</button>
+                    <button onClick={()=>(changeQuantity("DECREMENT", id, type, size, price))} disabled={totalAmountInCart === 1} className="button button--outline button--add quantity__decrement">-</button>
                     <span className="quantity__number">{totalAmountInCart}</span>
                     <button onClick={()=>(changeQuantity("INCREMENT", id, type, size, price))} className="button button--outline button--add quantity__increment">+</button>
                 </div>

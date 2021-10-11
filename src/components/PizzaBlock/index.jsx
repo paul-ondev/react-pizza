@@ -8,6 +8,7 @@ import { Button } from '..';
 const PizzaBlock = ({addedPizzasToCart, onAddPizza, id, name, imageUrl, price, types, sizes }) => {
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(sizes[0]);
+  const [numberPizzasInCart, setnumberPizzasInCart] = useState(0);
 
 
   const availableTypes = ['тонкое', 'традиционное'];
@@ -44,9 +45,8 @@ const PizzaBlock = ({addedPizzasToCart, onAddPizza, id, name, imageUrl, price, t
   const findAmountOfPizzasInCart = (id, addedPizzas) => {
     if (true) {
       const key =`id-${id}`;
-      console.log("key", key)
       let arr = Object.keys(addedPizzas).filter(item => item.toString().includes(key) );
-      console.log("arr is", arr)
+      
       
       for (const one of arr) {
         count = count + addedPizzas[one].totalAmountInCart;
@@ -110,7 +110,7 @@ const PizzaBlock = ({addedPizzasToCart, onAddPizza, id, name, imageUrl, price, t
             />
           </svg>
           <span>Добавить</span>
-          <i>{count}</i>
+          <i>{numberPizzasInCart}</i>
         </Button>
       </div>
     </div>
