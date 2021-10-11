@@ -52,7 +52,7 @@ const SortPopup = React.memo(function SortPopup({ items, onClickSortBy, activeSo
               return (
                 <li
                   onClick={() => onSelectItem(index)}
-                  className={items.findIndex(elem => elem.type == activeSortBy.type ) === index ? 'active' : null}
+                  className={items.findIndex(elem => elem.type === activeSortBy.type ) === index ? 'active' : null}
                   key={`${item.type}_${index}`}>
                   {item.name}
                 </li>
