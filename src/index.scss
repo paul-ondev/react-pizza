@@ -27,6 +27,7 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 32px;
+    flex-wrap: wrap;
   }
   &--cart {
     max-width: 820px;

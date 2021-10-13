@@ -34,7 +34,24 @@
   }
   &__cart {
     span:last-child {
-      margin-left: 8px;
+      margin-left: -24px;
     }
+  }
+}
+
+.cartIcon {
+  &__wain {
+    position: relative;
+    top: -5px;
+  }
+  &__wheel-l {
+    position: relative;
+    top: 3px;
+    right: 23px;
+  }
+  &__wheel-r {
+    position: relative;
+    top: 3px;
+    right: 26px;
   }
 }
