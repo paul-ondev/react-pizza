@@ -49,10 +49,10 @@ const Header = () => {
               />
             </svg>
             <svg className="cartIcon__wheel-l" width="5" height="6" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.33333 4.33332C3.06971 4.33332 3.66667 3.73637 3.66667 2.99999C3.66667 2.26361 3.06971 1.66666 2.33333 1.66666C1.59695 1.66666 1 2.26361 1 2.99999C1 3.73637 1.59695 4.33332 2.33333 4.33332Z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokLinejoin="round"/>
+              <path d="M2.33333 4.33332C3.06971 4.33332 3.66667 3.73637 3.66667 2.99999C3.66667 2.26361 3.06971 1.66666 2.33333 1.66666C1.59695 1.66666 1 2.26361 1 2.99999C1 3.73637 1.59695 4.33332 2.33333 4.33332Z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <svg className="cartIcon__wheel-r" width="5" height="6" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.33333 4.33332C3.06971 4.33332 3.66667 3.73637 3.66667 2.99999C3.66667 2.26361 3.06971 1.66666 2.33333 1.66666C1.59695 1.66666 1 2.26361 1 2.99999C1 3.73637 1.59695 4.33332 2.33333 4.33332Z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokLinejoin="round"/>
+              <path d="M2.33333 4.33332C3.06971 4.33332 3.66667 3.73637 3.66667 2.99999C3.66667 2.26361 3.06971 1.66666 2.33333 1.66666C1.59695 1.66666 1 2.26361 1 2.99999C1 3.73637 1.59695 4.33332 2.33333 4.33332Z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             </div>
             
